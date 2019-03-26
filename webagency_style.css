@@ -1,0 +1,976 @@
+/* stylesheet de WebAgency*/
+
+@font-face {
+    font-family: 'FontAwesome-webfont';
+    src: url('webagency_fonts/fontawesome-webfont.eot') format('eot'),
+         url('webagency_fonts/fontawesome-webfont.svg') format('svg'),
+         url('webagency_fonts/fontawesome-webfont.ttf') format('ttf'),
+         url('webagency_fonts/fontawesome-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'FontAwesome'; 
+    src: url('webagency_fonts/FontAwesome.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family:'Glyphicons Halfling Regular';
+    src : url('webagency_fonts/glyphicons-halflings-regular.eot') format('eot'),
+          url('webagency_fonts/glyphicons-halflings-regular.svg') format('svg'),
+          url('webagency_fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+          url('webagency_fonts/glyphicons-halflings-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family:'Roboto';
+    src : url('webagency_fonts/Roboto-Black.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-BlackItalic.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Bold.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-BoldItalic.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Italic.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Light.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-LightItalic.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Medium.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-MediumItalic.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Regular.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-Thin.ttf') format('truetype'),
+          url('webagency_fonts/Roboto-ThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 0.8em;
+    color: black;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* ================================================================================================================================ */
+/*                                   Bloc page                                                                                      */
+/* ================================================================================================================================ */
+#bloc_page {
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+/* ================================================================================================================================ */
+/*                                   Header fixe                                                                                    */
+/* ================================================================================================================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    z-index: 1;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header aside {
+    margin-top: 25px;
+    margin-left: 12%;
+}
+
+header aside img {
+    transform: scale(0.8);
+}
+
+header nav {
+    margin-top: 20px;
+    margin-right: 8%;
+   }
+
+header nav ul {
+    display: flex; 
+    list-style-type: none;
+}
+
+header nav a {
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+header nav a:hover {
+    border-top: 3px solid rgb(92, 173, 211);
+}
+
+/* ================================================================================================================================ */
+/*                                   Slider                                                                                         */
+/* ================================================================================================================================ */
+
+#slider {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(0deg, rgb(245, 245, 245), rgb(255, 255, 255) 5%);
+    padding-bottom: 50px;
+}
+
+#slides {
+    position: relative;
+    left: 0;
+    padding: 0;
+    width: 200%;
+    transition: left 1s;
+    margin: 0px;  
+    animation: slider 10s linear infinite;
+}
+
+#slider:target #slides{ /* -- contrôle manuel du slider à rendre compatible avec l'automatisme  -- */
+    left:-100%;
+}
+
+#slides li {
+  display: inline;
+}
+
+.slider_image {
+    width: 50%;
+    margin-top: 110px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+#image-border {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 54px;
+    background-color:rgb(0, 0, 0);
+    opacity: 0.1;
+}
+
+@keyframes slider { 
+    0% { left: 0% } 
+    25% { left: 0% } 
+    50% { left: -100% }
+    75% { left: -100% }
+    100% { left: 0% } 
+}
+@-webkit-keyframes slider { 
+    0% { left: 0% } 
+    25% { left: 0% } 
+    50% { left: -100% }
+    75% { left: -100% }
+    100% { left: 0% }
+} 
+@-moz-keyframes slider { 
+    0% { left: 0% } 
+    25% { left: 0% } 
+    50% { left: -100% }
+    75% { left: -100% }
+    100% { left: 0% }
+} 
+@-o-keyframes slider { 
+    0% { left: 0% } 
+    25% { left: 0% } 
+    50% { left: -100% }
+    75% { left: -100% }
+    100% { left: 0% }
+}  
+
+@keyframes stop-slider {  /* -- reste à faire fonctionner -- */
+    0% { left: 0% } 
+    100% { left: 0% } 
+}
+
+#slider_objets {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+    height: auto;
+    margin-top: 2%;
+    color: white;
+    text-align: left;
+}
+
+#fleche_prev, #fleche_next {
+    position: relative;
+    top: 110px;
+    color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 50%;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+ }
+
+#fleche_prev { 
+    position: absolute;  
+    top: 55%;
+    left: -18px;
+    text-align: center;
+}
+
+#fleche_next {
+    position: absolute;  
+    top: 55%;
+    left: 178.5%;
+    text-align: center;
+}
+
+#fleche_prev:hover, #fleche_next:hover {
+    opacity: 0.5;
+}
+
+i.fa-chevron-left {
+    margin-left: 10px;
+}
+
+i.fa-chevron-right {
+    margin-right: 10px;
+}
+
+#slider_objets h1 {
+    margin-bottom: 0px;
+    margin-left: 25%;
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 2em;
+}
+
+#slider_objets h1 strong {    
+    color: rgb(92, 173, 211);
+    font-weight: normal;
+} 
+
+#slider_objets p {
+    margin-left: 25%;
+    font-size: 0.8em;
+}
+
+#bouton_bleu {
+    background-color: rgb(92, 173, 211);    
+    width: 100px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    font-size: 0.9em; 
+    text-decoration: none;
+    text-align: center;
+    border: transparent;
+    border-radius: 3px;
+    border-bottom: 3px solid rgb(70, 140, 173);
+    margin-left: 25%;
+}
+
+#adresse {
+    background-color: rgb(92, 173, 211);    
+    width: 200px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    font-size: 0.9em; 
+    text-decoration: none;
+    text-align: center;
+    border: transparent;
+    border-radius: 3px;
+    border-bottom: 3px solid rgb(70, 140, 173);
+    margin-left: 25%;
+    display: none;
+}
+
+#bouton_bleu:hover {
+    cursor:pointer;
+}
+
+#bouton_bleu:active {
+    display: none;
+}
+
+#bouton_bleu:active + #adresse {
+    display: block;
+}
+
+#bordure_slider {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(245, 245, 245) 90%);
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+/* ================================================================================================================================ */
+/*                                   Généralités Sections                                                                           */
+/* ================================================================================================================================ */
+
+#services, #projets, #contact {
+    margin-bottom: 20px;
+}
+
+#services:target, #projets:target, #contact:target {
+    padding-top: 90px; /* -- compément de padding-top pour éviter que le header fixe de 110px ne supperpose le haut des sections -- */                       
+}                                        /* -- lors des ancrages # du nav -- */
+
+#services h1, #projets h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    padding-top: 20px;   
+}
+
+#services p, #projets p {
+    line-height: 1.8em;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.trait { /* ---------- trait/point sous titre section -------------------- */
+    display: inline-block;
+    width: 100px;
+    height: 10px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+i.fa-circle {
+    color: rgb(92, 173, 211);
+    padding: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    height: 16px;
+    transform: scale(0.8);
+}
+
+/* ================================================================================================================================ */
+/*                                   Services                                                                                       */
+/* ================================================================================================================================ */
+
+#services {
+    background: linear-gradient(0deg, rgb(245, 245, 245), rgb(255, 255, 255) 10%);
+}
+
+#services_corps {
+    display: flex;
+    position: relative;
+}
+
+#services aside {
+    margin-top: 30px;
+}
+
+#services aside img {
+    height: 300px;
+}
+
+#services #services_navig {
+    margin-top: 100px;
+    text-align: left;
+}
+
+.services_list {
+    display: flex;
+}
+
+#services_navig i.fa-chart-line, i.fa-cubes, i.fa-chart-pie {
+    color: rgb(92, 173, 211);
+    border: 1px solid rgb(220, 220, 220);
+    padding: 15px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+#services_navig i.fa-circle {
+    transform: scale(0.7);
+    position: relative;
+    left: -10px;
+    top: 22px;
+}
+
+.services_description {
+     list-style-type: none; 
+     padding: 0px 10px 10px 10px;
+}
+
+.services_description h2 {
+    margin: 0;
+}
+
+.services_description p {
+    margin-right: 50px;
+    margin-top: 5px;
+}
+
+#bordure_services {
+    width: 100%;
+    height: 30px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgb(245, 245, 245) 90%);
+}
+
+/* ================================================================================================================================ */
+/*                                   Projets                                                                                        */
+/* ================================================================================================================================ */
+
+            /* --------------- partie nav projets --------------- */
+#projets {
+    background: rgb(245, 245, 245);
+}
+
+#projets p, #projets .tab_fleche {
+    margin-bottom: 40px;
+}
+
+#projets input[type=radio] {  /* -- suppression des boutons radios -- */
+   display: none;
+}
+  
+#projets #tabs {  /* -- Flex-box Tabs avec boutons et Pannels -- */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /* -- Pannel sous les boutons -- */
+}      
+
+#projets .tab_fleche {  /* -- Gestion de la flêche marqueur dans une flex-box -- */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}  
+
+#projets i.fa-caret-down {  /* -- Flêche masquée par défaut -- */
+    display: none;
+    position: relative;
+    bottom: 20px;
+    transform: scale(2);
+    color: rgb(70, 140, 173);
+    height: 0px;
+}
+
+#projets .tab {  /* -- mise en forme des boutons -- */
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 15px;
+    vertical-align: top;
+    text-align: center;
+    background-color: rgb(229, 229, 229);
+    cursor: pointer;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#projets #tab1-label {  /* -- mise en forme particulière bouton 1 -- */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#projets #tab4-label {  /* -- mise en forme particulière bouton 4 -- */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#projets .tab:hover {  /* -- mise en forme :hover des boutons -- */
+    background-color: rgb(92, 173, 211);
+    padding-bottom: 10px;
+    border-bottom: 5px solid rgb(70, 140, 173);
+}  
+
+#tab1:checked ~ #tabs #tab1-label,  /* -- mise en forme au :checked des boutons -- */
+#tab2:checked ~ #tabs #tab2-label,
+#tab3:checked ~ #tabs #tab3-label,
+#tab4:checked ~ #tabs #tab4-label {
+    background-color: rgb(92, 173, 211);
+    color: white; 
+    padding-bottom: 10px;
+    border-bottom: 5px solid rgb(70, 140, 173);
+}
+
+#tab1:checked ~ #tabs .tab_fleche #fleche1,  /* -- apparition au :checked des flêches -- */
+#tab2:checked ~ #tabs .tab_fleche #fleche2,
+#tab3:checked ~ #tabs .tab_fleche #fleche3,
+#tab4:checked ~ #tabs .tab_fleche #fleche4 {
+    display: block;
+}
+
+#projets .panel {  /* -- mise en forme du pannel d'images -- */
+    display: flex;
+    padding: 0px;
+    padding-bottom: 10px;
+    width: 100%;
+    flex-basis: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#tab2:checked ~ #tabs .panel figure:not(.crea){ /* -- disparition des images des autres classes au :checked -- */
+    display:none;                               /* -- le boutons 1 affiche par défaut toutes les classes "all" -- */
+}
+
+#tab3:checked ~ #tabs .panel figure:not(.corp){ /* -- disparition des images des autres classes au :checked  -- */
+    display:none;
+}
+
+#tab4:checked ~ #tabs .panel figure:not(.port){ /* -- disparition des images des autres classes au :checked  -- */
+    display:none;
+}
+
+            /* --------------- partie img projets --------------- */
+#projets figure {
+    position: relative;
+    margin: 10px;
+    width: 22%;
+}
+
+#projets img {
+    display: block;
+    position: relative;
+    bottom: 0; 
+    width: 100%;
+}
+
+#projets figure figcaption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    text-align: left;
+    font-size: 0.7em;
+    color: rgb(255, 255, 255);
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+        -webkit-transition: all 0.6s ease;
+        -moz-transition:    all 0.6s ease;
+        -o-transition:      all 0.6s ease;
+}
+
+#projets figure figcaption i.fa-eye {
+    position: absolute;
+    right: 10px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: rgb(92, 173, 211);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+#projets figure figcaption p {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    padding: 3%;
+    line-height: 1.5em;
+}
+
+#projets figure:hover figcaption, #projets figure:active figcaption { /* -- :active rajouté pour les écran tactiles */
+    opacity: 1;
+}
+
+/* ================================================================================================================================ */
+/*                                   Contact                                                                                        */
+/* ================================================================================================================================ */
+
+#contact {
+    position: relative;
+    height: 500px;
+    background-color: unset;
+}
+
+#contact iframe {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#contact #filtre {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #184a7d;
+    opacity: 0.3;
+    max-height: 500px;
+}
+
+#contact form {
+    display: block;
+    width: 27%;
+    position: relative; 
+    left: 60%; 
+    top: 7%;
+    background-color: rgba(245, 245, 245, 0.8);
+    text-align: left;
+    padding: 15px;
+}
+
+form h2 {
+    font-size: 1.6em;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+form p {
+    padding: 0;
+    line-height: 1.5em;
+}
+
+form p em {
+    font-style: normal;
+    border-bottom: dotted 1px;
+}
+
+#pseudo, #mail, #subject, #message, #submit {
+    padding: 7px;
+    padding-right: 0;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 3px;
+    margin: 0px;
+    margin-bottom: 10px;
+    width: 97%;
+    font-family: arial;
+}
+
+#message {
+    height: 130px;
+}
+
+#submit {   
+    background-color: rgb(92, 173, 211);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: transparent;
+    border-bottom: 2px solid rgb(70, 140, 173);
+    margin-bottom: 0;
+    width: 100px;
+    cursor: pointer;
+}
+
+#submit:active {
+    background-color: rgb(70, 140, 173);
+}
+
+/* ================================================================================================================================ */
+/*                                   Footer                                                                                         */
+/* ================================================================================================================================ */
+
+footer {
+    line-height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: rgb(73, 144, 176);
+}
+
+footer #coordonnees, footer #blog {
+    height: auto;
+    text-align: left;
+    padding: 10px;
+    padding-left: 25px;
+    border-left: 1px solid rgb(220, 220, 220);
+}
+
+footer img {
+    height: 50px;
+    margin-top: 0;
+    display: inline-block;
+}
+
+#img-blog {
+    margin-left: 80px;
+}
+
+#blog {
+    background-color: rgba(245, 245, 245, 0.8);
+    width: 37%;
+}
+
+#blog:hover, #blog:active {
+    border-left: 3px solid rgb(92, 173, 211);
+    padding-left: 23px;
+}
+
+/* ---------- cta fixe --------------------------------- */
+
+#cta_button {
+    display: none;
+}
+
+/* ================================================================================================================================ */
+/* ================================================================================================================================ */
+/*                                    Medias Quereies                                                                               */
+/* ================================================================================================================================ */
+/* ================================================================================================================================ */
+
+    /* =========================================================================== */
+    /*                           Medias Quereies Tablettes                         */
+    /* =========================================================================== */
+   
+    @media all and (max-width: 992px) 
+    {
+
+        /* ---------- MQT header -------------------------------------- */
+        header {
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: auto;  
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        header aside {
+            margin: 0;
+        }
+
+        header nav {
+            margin: 0;
+        }     
+   
+        header nav ul {
+            flex-direction: column; 
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        header nav li {
+            padding-bottom: 30px;
+            margin-top: 5px;
+        }
+
+        header nav a {
+            padding-top: 5px;
+        }
+
+        /* ---------- MQT sections généralités ------------------------- */
+        #services:target, #projets:target, #contact:target {
+            padding-top: 0px; /* -- suppression décalage du header fixe lors des ancrages # du nav -- */                       
+        }  
+
+        /* ---------- MQT section slider ------------------------------- */
+        #slides {
+            animation: none;
+        }
+
+        #image-border {
+            display: none;
+        }
+
+        #fleche_prev, #fleche_next {
+            display: none;
+        } 
+
+        .slider_image {
+            margin-top: 0px;
+        }
+
+        #slider_objets {
+            bottom: 40%;
+            padding-right: 0px;
+        }
+
+        #slider_objets h1 {
+            font-size: 1.7em;
+            margin-left: 10%;
+        }
+
+        #slider_objets p {
+            font-size: 0.5em;
+            margin-left: 10%;
+        }
+
+        #bouton_bleu {
+            display: none;
+        }
+
+        /* ---------- MQT section services ------------------------------ */
+        #services aside img {
+            height: 150px;
+        }
+
+        #services_corps {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #services #services_navig {
+            margin-top: 10px;
+        }
+
+        #services #services_navig .services_list {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #services #services_navig i.fa-circle {
+            left: 0px;
+            top: -12px;
+        }
+
+        #services #services_navig .services_description {
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        #services #services_navig .services_description p {
+            margin-right: 0px;
+        }
+
+        /* ---------- MQT section projets -------------------------------- */
+        #projets figure figcaption p {
+            font-size: 1em;
+        }
+
+        /* ---------- MQT section contact ------------------------------- */
+        #contact form {
+            width: 60%;
+            left: 17%;
+        }
+    }
+
+    /* ============================================================================ */
+    /*                           Medias Quereies Smartphones                        */
+    /* ============================================================================ */
+
+    @media all and (max-width: 768px) 
+    {
+    
+        /* ---------- MQS header ---------------------------------------- */
+        header {
+            position: relative;
+        }
+
+        /* ---------- MQS section slider --------------------------------- */
+        #slider_objets {
+            position: relative;
+            width: 100%;
+            color: black;
+            text-align: center;
+        }
+
+        #bouton_bleu {
+            display: none;
+        }
+
+        /* ---------- MQS Généralités section ---------------------------- */
+        #services h1, #projets h1 {
+            font-size: 2em;
+        }
+
+        /* ---------- MQS section projets -------------------------------- */
+        #projets #tabs {
+            flex-direction: column;
+            align-items: center;
+        }  
+
+        #projets .tab_fleche {
+            margin-bottom: 10px;
+        }
+
+        #projets .tab {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        #projets figure {
+            width: 80%;
+        }
+
+        #projets figure figcaption p {
+            font-size: 1.5em;
+            line-height: 1.2em;
+        }
+
+        /* ---------- MQS section contact -------------------------------- */
+        #contact {
+            height: auto;
+        }
+
+        #contact form {
+            width: auto;
+            left: 0;
+            top: 0%;
+        }
+
+        #contact iframe, #contact #filtre {
+            display: none;
+        }
+
+        /* ---------- MQS footer ----------------------------------------- */
+        footer {
+            margin-bottom: 80px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer #coordonnees, footer #blog {
+            width: 100%;
+            text-align: center;
+            border-left: none;
+            border-top: 1px solid rgb(220, 220, 220);
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        footer ul {
+            width: 100%;
+        }
+
+        #img-blog {
+            margin-left: 0px;
+        }
+
+        #blog:hover, #blog:active {
+            border-left: 0;
+            padding-left: 0;
+            border-top: 3px solid rgb(92, 173, 211);
+            padding-top: 8px;
+        }
+
+        /* ---------- MQS cta -------------------------------------------- */
+        #cta_button {   
+            width: 200px;
+            background-size: 50%;
+            position: fixed;
+            margin-left: 50%;
+            padding: 0;
+            bottom: 20px;
+            left: -100px;
+            border-radius: 12%/50%;
+            background-image: url(webagency_images/cta2/cta2-bg.jpg);  
+            display: block;
+        }
+
+        #cta_button p {
+            color: #fff;
+            font-size: 0.7em; 
+            text-decoration: none;
+            margin: 0px;
+        }
+
+        #cta_button img {
+            display: block;
+            width: 80%;
+            max-width: 1140px;
+            max-height: 500px;  
+            margin: auto;
+            position: relative;
+            bottom: 0px;
+        }
+    }
+
+/* ================================================================================================================================ */
+/*                                   End                                                                                            */
+/* ================================================================================================================================ */
